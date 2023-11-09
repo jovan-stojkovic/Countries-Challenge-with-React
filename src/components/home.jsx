@@ -38,18 +38,22 @@ const Home = () => {
 
           return (
             <article key={numericCode}>
-              <div>
-                <img src={flags.svg} alt={name} />
-                <h3>{name.common}</h3>
-                <h4>
-                  Population: <span>{population}</span>
-                </h4>
-                <h4>
-                  Region: <span>{region}</span>
-                </h4>
-                <h4>
-                  Capital: <span>{capital}</span>
-                </h4>
+              <div className="single-country-card">
+                <div className="img-container">
+                  <img src={flags.svg} alt={name} />
+                </div>
+                <div className="info-country-card">
+                  <h3>{name.common}</h3>
+                  <h4>
+                    Population: <span>{population}</span>
+                  </h4>
+                  <h4>
+                    Region: <span>{region}</span>
+                  </h4>
+                  <h4>
+                    Capital: <span>{capital}</span>
+                  </h4>
+                </div>
               </div>
             </article>
           );
