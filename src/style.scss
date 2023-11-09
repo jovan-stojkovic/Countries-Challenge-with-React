@@ -51,13 +51,19 @@ nav {
 
     a {
       all: unset;
-      h1 {
-        font-size: 24px;
-      }
 
       &:hover {
         cursor: pointer;
       }
+    }
+
+    .logo {
+      font-size: 24px;
+      color: black;
+    }
+
+    .logo.dark {
+      color: $White;
     }
 
     .theme {
@@ -85,10 +91,6 @@ nav {
 
 .navbar-class.dark {
   background-color: rgb(43, 57, 69, 0.9);
-}
-
-.logo.dark {
-  color: $White;
 }
 
 ///////////////////////////////////BACK TO THE TOP BUTTON STYLING///////////////////////////////////
@@ -282,7 +284,7 @@ nav {
   &:hover {
     cursor: pointer;
     scale: 1.02;
-    transition: 0.3s;
+    transition: 0.1s;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
@@ -319,6 +321,28 @@ nav {
     span {
       font-size: 14px;
       font-weight: 300;
+    }
+  }
+}
+
+.single-country-card.dark {
+  background-color: $Dark-Blue;
+
+  &:active {
+    box-shadow: 0 5px rgb(16, 16, 16);
+  }
+
+  .info-country-card {
+    h3 {
+      color: $White;
+    }
+
+    h4 {
+      color: $White;
+    }
+
+    span {
+      color: $White;
     }
   }
 }
