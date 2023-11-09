@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -26,21 +27,23 @@ const Home = () => {
           return (
             <article key={cca2}>
               <div className="single-country-card">
-                <div className="img-container">
-                  <img src={flags.svg} alt={name} />
-                </div>
-                <div className="info-country-card">
-                  <h3>{name.common}</h3>
-                  <h4>
-                    Population: <span>{population}</span>
-                  </h4>
-                  <h4>
-                    Region: <span>{region}</span>
-                  </h4>
-                  <h4>
-                    Capital: <span>{capital}</span>
-                  </h4>
-                </div>
+                <Link to={`/countries/${name}`}>
+                  <div className="img-container">
+                    <img src={flags.svg} alt={name} />
+                  </div>
+                  <div className="info-country-card">
+                    <h3>{name.common}</h3>
+                    <h4>
+                      Population: <span>{population}</span>
+                    </h4>
+                    <h4>
+                      Region: <span>{region}</span>
+                    </h4>
+                    <h4>
+                      Capital: <span>{capital}</span>
+                    </h4>
+                  </div>
+                </Link>
               </div>
             </article>
           );
