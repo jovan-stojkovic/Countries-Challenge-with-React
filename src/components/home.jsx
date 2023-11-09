@@ -1,0 +1,62 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+const Home = () => {
+  // const [countries, setCountries] = useState([]);
+
+  // const fetchData = async () => {
+  //   const response = await fetch(apiURL);
+  //   const countries = await response.json();
+  //   setCountries(countries);
+  // };
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const apiURL = "https://restcountries.com/v3.1/all";
+
+    axios
+      .get(apiURL)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+
+  return (
+    <>
+      <section className="grid">
+        {data.map((country) => {
+          const { name, population, region, capital, flags, numericCode } =
+            country;
+
+          return (
+            <article key={numericCode}>
+              <div>
+                <img src={flags.svg} alt={name} />
+                <h3>{name.common}</h3>
+                <h4>
+                  Population: <span>{population}</span>
+                </h4>
+                <h4>
+                  Region: <span>{region}</span>
+                </h4>
+                <h4>
+                  Capital: <span>{capital}</span>
+                </h4>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+    </>
+  );
+};
+
+export default Home;

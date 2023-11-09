@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap");
+//FONT WEIGHT 300 - 600 - 800
+
+// Dark Mode Elements
+$Dark-Blue: hsl(209, 23%, 22%);
+
+// Dark Mode Background
+$Very-Dark-Blue: hsl(207, 26%, 17%);
+
+//Light Mode Text
+$Very-Dark-Blue: hsl(200, 15%, 8%);
+
+//Light Mode Input
+$Dark-Gray: hsl(0, 0%, 52%);
+
+//Light Mode Background
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+// Dark Mode Text & Light Mode Elements
+$White: hsl(0, 0%, 100%);
+
+// Box Shadow
+$box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+}
+
+///////////////////////////////////NAVBAR STYLING///////////////////////////////////
+
+nav {
+  background-color: $White;
+  box-shadow: $box-shadow;
+
+  .navbar-container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    a {
+      all: unset;
+      h1 {
+        font-size: 24px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .theme {
+      all: unset;
+      width: 95px;
+      text-align: end;
+      font-size: 14px;
+      font-weight: 800;
+      background-image: url(https://www.iconbolt.com/iconsets/eva-outline/moon.svg);
+      background-repeat: no-repeat;
+      background-size: 16px;
+      background-position: left center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+///////////////////////////////////APP STYLING///////////////////////////////////
+
+.app {
+  background-color: $Very-Light-Gray;
+
+  .app-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+///////////////////////////////////FILTER COMPONENTS///////////////////////////////////
+
+.filter-components {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+///////////////////////////////////SEARCH INPUT STYLING///////////////////////////////////
+
+.search-input {
+  all: unset;
+  width: 400px;
+  height: 50px;
+  background-color: $White;
+  box-shadow: $box-shadow;
+  border-radius: 5px;
+  padding-left: 60px;
+  background-image: url(https://www.iconbolt.com/iconsets/hawcons-filled/search.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 20px center;
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+::placeholder {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+///////////////////////////////////DARK MODE TOGGLE STYLING///////////////////////////////////
+
+.filter-button {
+  all: unset;
+  width: 200px;
+  height: 50px;
+  background-color: $White;
+  box-shadow: $box-shadow;
+  border-radius: 5px;
+  background-image: url(https://www.iconbolt.com/iconsets/darkwing-free/down.svg);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: right 20px center;
+  padding-left: 20px;
+  font-weight: 600;
+  position: relative;
+  transition: ease-in-out 0.4s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.filter-button.active {
+  background-image: url(https://www.iconbolt.com/iconsets/darkwing-free/up.svg);
+  transition: ease-in-out 0.4s;
+}
+
+.hidden-filter-container {
+  width: 220px;
+  background-color: $White;
+  box-shadow: $box-shadow;
+  border-radius: 5px;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  top: 35px;
+  transition: 0.4s;
+  opacity: 0;
+  ul {
+    list-style-type: none;
+    line-height: 25px;
+
+    li {
+      font-weight: 600;
+      gap: 10px;
+
+      &:hover {
+        cursor: pointer;
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+.hidden-filter-container.active {
+  display: unset;
+  transition: 0.4;
+  top: 60px;
+  opacity: 1;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
