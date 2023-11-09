@@ -1,21 +1,22 @@
-import { useState } from "react";
-
 const Filter = () => {
-  const [isActive, setIsActive] = useState(false);
-
   const showContainer = () => {
-    setIsActive(!isActive);
+    const filterButton = document.querySelector(".filter-button");
+    const hiddenFilterContainer = document.querySelector(
+      ".hidden-filter-container"
+    );
+
+    hiddenFilterContainer.classList.toggle("active");
   };
 
   return (
     <>
       <button
-        className={`filter-button ${isActive ? "active" : ""}`}
+        className="filter-button"
         id="filter-button-id"
         onClick={showContainer}
       >
         Filter by Region
-        <div className={`hidden-filter-container ${isActive ? "active" : ""}`}>
+        <div className="hidden-filter-container">
           <ul>
             <li>Africa</li>
             <li>America</li>

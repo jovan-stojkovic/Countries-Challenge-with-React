@@ -5,7 +5,7 @@
 $Dark-Blue: hsl(209, 23%, 22%);
 
 // Dark Mode Background
-$Very-Dark-Blue: hsl(207, 26%, 17%);
+$Very-Dark-Bluee: hsl(207, 26%, 17%);
 
 //Light Mode Text
 $Very-Dark-Blue: hsl(200, 15%, 8%);
@@ -38,7 +38,7 @@ nav {
   box-shadow: $box-shadow;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 3;
 
   .navbar-container {
@@ -70,15 +70,25 @@ nav {
       background-repeat: no-repeat;
       background-size: 16px;
       background-position: left center;
-      transition: 0.3s;
 
       &:hover {
         cursor: pointer;
-        scale: 1.05;
-        transition: 0.3s;
       }
     }
+
+    .theme.dark {
+      color: white;
+      background-image: url(https://www.iconbolt.com/iconsets/fluent-emoji-flat/sun.svg);
+    }
   }
+}
+
+.navbar-class.dark {
+  background-color: rgb(43, 57, 69, 0.9);
+}
+
+.logo.dark {
+  color: $White;
 }
 
 ///////////////////////////////////BACK TO THE TOP BUTTON STYLING///////////////////////////////////
@@ -119,6 +129,10 @@ nav {
   }
 }
 
+.app.dark {
+  background-color: $Very-Dark-Bluee;
+}
+
 ///////////////////////////////////FILTER COMPONENTS///////////////////////////////////
 
 .filter-components {
@@ -143,12 +157,20 @@ nav {
   background-size: 20px;
   background-position: 20px center;
   font-weight: 600;
-  transition: 0.3s;
 
   &:hover {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: 0.3s;
+  }
+}
+
+.search-input.dark {
+  background-color: $Dark-Blue;
+  color: $White;
+
+  &::placeholder {
+    color: $White;
   }
 }
 
@@ -173,13 +195,17 @@ nav {
   padding-left: 20px;
   font-weight: 600;
   position: relative;
-  transition: ease-in-out 0.4s;
 
   &:hover {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: 0.3s;
   }
+}
+
+.filter-button.dark {
+  background-color: $Dark-Blue;
+  color: $White;
 }
 
 .filter-button.active {
@@ -225,6 +251,16 @@ nav {
   &:hover {
     cursor: pointer;
   }
+}
+
+.hidden-filter-container.active.dark {
+  background-color: $Dark-Blue;
+  color: white;
+}
+
+.hidden-filter-container.dark {
+  background-color: $Dark-Blue;
+  color: white;
 }
 
 ///////////////////////////////////HOME PAGE STYLING///////////////////////////////////
@@ -286,3 +322,5 @@ nav {
     }
   }
 }
+
+///////////////////////////////////DARK THEME STYLING///////////////////////////////////
