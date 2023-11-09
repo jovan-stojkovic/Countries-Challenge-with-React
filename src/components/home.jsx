@@ -2,18 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Home = () => {
-  // const [countries, setCountries] = useState([]);
-
-  // const fetchData = async () => {
-  //   const response = await fetch(apiURL);
-  //   const countries = await response.json();
-  //   setCountries(countries);
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
   const [data, setData] = useState([]);
 
   useEffect(() => {

@@ -33,8 +33,13 @@ $box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 ///////////////////////////////////NAVBAR STYLING///////////////////////////////////
 
 nav {
-  background-color: $White;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
   box-shadow: $box-shadow;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
 
   .navbar-container {
     max-width: 1200px;
@@ -76,6 +81,31 @@ nav {
   }
 }
 
+///////////////////////////////////BACK TO THE TOP BUTTON STYLING///////////////////////////////////
+
+.to-the-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.687);
+  z-index: 5;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    height: 50px;
+  }
+}
+
 ///////////////////////////////////APP STYLING///////////////////////////////////
 
 .app {
@@ -84,6 +114,8 @@ nav {
   .app-content {
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 73px;
+    padding-bottom: 70px;
   }
 }
 

@@ -4,12 +4,14 @@ import "./style.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from "./components/search";
 import Filter from "./components/filter";
+import BackToTopButton from "./components/top";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="app">
         <Navbar />
+        <BackToTopButton/>
         <div className="app-content">
           <div className="filter-components">
             <Search />
