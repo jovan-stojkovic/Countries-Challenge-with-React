@@ -1,1 +1,2 @@
-napravi da theme ne bude button nego toggle
+name.common
+name.nativeName

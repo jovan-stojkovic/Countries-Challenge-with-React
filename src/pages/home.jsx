@@ -27,14 +27,14 @@ const Home = () => {
           return (
             <article key={cca2}>
               <div className="single-country-card">
-                <Link to={`/countries/${name}`}>
+                <Link to={`/countries/${name.common}`}>
                   <div className="img-container">
                     <img src={flags.svg} alt={name} />
                   </div>
                   <div className="info-country-card">
                     <h3>{name.common}</h3>
                     <h4>
-                      Population: <span>{population}</span>
+                      Population: <span>{population.toLocaleString("en-US")}</span>
                     </h4>
                     <h4>
                       Region: <span>{region}</span>
