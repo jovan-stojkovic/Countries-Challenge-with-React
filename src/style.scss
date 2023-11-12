@@ -66,6 +66,20 @@ nav {
       color: $White;
     }
 
+    .checkbox-wrapper-54 {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .theme-text {
+        font-weight: 600;
+      }
+
+      .theme-text.dark {
+        color: $White;
+      }
+    }
+
     .checkbox-wrapper-54 input[type="checkbox"] {
       visibility: hidden;
       display: none;
@@ -165,6 +179,7 @@ nav {
 
 .app {
   background-color: $Very-Light-Gray;
+  min-height: 100vh;
 
   .app-content {
     max-width: 1200px;
@@ -184,7 +199,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 0;
+  padding: 50px 0;
 }
 
 ///////////////////////////////////SEARCH INPUT STYLING///////////////////////////////////
@@ -220,7 +235,7 @@ nav {
 }
 
 ::placeholder {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -399,9 +414,46 @@ nav {
 
 ///////////////////////////////////SINGLE PAGE STYLING///////////////////////////////////
 
+.country-page-container {
+  display: flex;
+  gap: 100px;
 
+  .flag {
+    height: 350px;
+    width: 550px;
+    box-shadow: $box-shadow;
 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 
-H1 {
-  font-size: 25px;
+  .info-single-country {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 550px;
+    H1 {
+      font-size: 28px;
+    }
+
+    h5 {
+      font-size: 15px;
+      line-height: 30px;
+      font-weight: 600;
+    }
+    .all-info {
+      display: flex;
+      justify-content: space-between;
+
+      .single-country-span {
+        font-weight: 300;
+      }
+    }
+  }
 }
+
+

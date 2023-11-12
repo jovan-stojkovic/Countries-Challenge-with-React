@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Search from "../components/search";
+import Filter from "../components/filter";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -20,6 +22,10 @@ const Home = () => {
 
   return (
     <>
+    <div className="filter-components">
+    <Search/>
+    <Filter />
+    </div>
       <section className="grid">
         {data.map((country) => {
           const { name, population, region, capital, flags, cca2 } = country;

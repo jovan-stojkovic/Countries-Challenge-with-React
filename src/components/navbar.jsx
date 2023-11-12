@@ -12,6 +12,7 @@ const Navbar = () => {
     const signleCountryCards = document.querySelectorAll(
       ".single-country-card"
     );
+    const themeText = document.querySelector('.theme-text')
 
     console.log("radi");
 
@@ -22,6 +23,8 @@ const Navbar = () => {
       filterButton.classList.add("dark");
       hiddenFilterContainer.classList.add("dark");
       logo.classList.add("dark");
+      themeText.classList.add('dark')
+      themeText.innerText = 'Dark Mode'
 
       signleCountryCards.forEach((card) => {
         card.classList.add("dark");
@@ -33,6 +36,9 @@ const Navbar = () => {
       filterButton.classList.remove("dark");
       hiddenFilterContainer.classList.remove("dark");
       logo.classList.remove("dark");
+      themeText.classList.remove('dark')
+      themeText.innerText = 'Light Mode'
+
 
       signleCountryCards.forEach((card) => {
         card.classList.remove("dark");
@@ -56,6 +62,7 @@ const Navbar = () => {
             />
             <span className="slider"></span>
           </label>
+          <p className="theme-text">Dark Mode</p>
         </div>
       </div>
     </nav>

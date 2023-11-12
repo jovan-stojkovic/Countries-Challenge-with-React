@@ -14,10 +14,10 @@ const App = () => {
         <Navbar />
         <BackToTopButton />
         <div className="app-content">
-          <div className="filter-components">
+          {/* <div className="filter-components">
             <Search />
             <Filter />
-          </div>
+          </div> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/countries/:name" element={<Country/>}
