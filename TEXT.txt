@@ -1,2 +1,5 @@
-name.common
-name.nativeName
+sort countries map() by name
+
+search component functionality
+
+filter functionality
