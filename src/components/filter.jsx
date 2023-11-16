@@ -1,22 +1,27 @@
-const Filter = () => {
-  const showContainer = () => {
-    const filterButton = document.querySelector(".filter-button");
-    const hiddenFilterContainer = document.querySelector(
-      ".hidden-filter-container"
-    );
+import { useState } from "react";
+import { useContext } from "react";
+import ThemeContext from "../helpers/ThemeContext";
 
-    hiddenFilterContainer.classList.toggle("active");
+useState;
+
+const Filter = () => {
+  const { theme } = useContext(ThemeContext);
+  const [hidden, setHidden] = useState("hidden");
+
+  const showHidden = () => {
+    console.log("radi");
+    setHidden(hidden === "hidden" ? "show" : "hidden");
   };
 
   return (
     <>
       <button
-        className="filter-button"
+        className={`filter-button ${theme} ${hidden}`}
         id="filter-button-id"
-        onClick={showContainer}
+        onClick={showHidden}
       >
         Filter by Region
-        <div className="hidden-filter-container">
+        <div className={`hidden-filter-container ${theme} ${hidden}`}>
           <ul>
             <li>Africa</li>
             <li>America</li>

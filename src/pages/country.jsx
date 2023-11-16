@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useContext } from "react";
+import ThemeContext from "../helpers/ThemeContext";
+
 
 const Country = () => {
+  const { theme } = useContext(ThemeContext);
+
   const [country, setCountry] = useState([]);
   const { name } = useParams();
 
@@ -19,8 +24,8 @@ const Country = () => {
 
   return (
     <>
-      <Link to="/" className="link-text">
-        <button className="back-button">Back</button>
+      <Link to="/" className={`link-text ${theme}`}>
+        <button className='back-button'>Back</button>
       </Link>
       <section className="country">
         {country.map((c) => {
@@ -40,7 +45,7 @@ const Country = () => {
           const nameGet = Object.entries(name.nativeName);
           console.log(typeof nameGet);
           return (
-            <div key={cca2} className="country-page-container">
+            <div key={cca2} className={`country-page-container ${theme}`}>
               <div className="flag">
                 <img src={flags.svg} alt={name.common} />
               </div>

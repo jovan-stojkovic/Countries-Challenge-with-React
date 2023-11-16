@@ -3,8 +3,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Search from "../components/search";
 import Filter from "../components/filter";
+import { useContext } from "react";
+import ThemeContext from "../helpers/ThemeContext";
 
 const Home = () => {
+  const { theme } = useContext(ThemeContext);
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -22,17 +25,17 @@ const Home = () => {
 
   return (
     <>
-    <div className="filter-components">
-    <Search/>
-    <Filter />
-    </div>
+      <div className="filter-components">
+        <Search />
+        <Filter />
+      </div>
       <section className="grid">
         {data.map((country) => {
           const { name, population, region, capital, flags, cca2 } = country;
 
           return (
             <article key={cca2}>
-              <div className="single-country-card">
+              <div className={`single-country-card ${theme}`}>
                 <Link to={`/countries/${name.common}`}>
                   <div className="img-container">
                     <img src={flags.svg} alt={name} />
@@ -40,7 +43,8 @@ const Home = () => {
                   <div className="info-country-card">
                     <h3>{name.common}</h3>
                     <h4>
-                      Population: <span>{population.toLocaleString("en-US")}</span>
+                      Population:{" "}
+                      <span>{population.toLocaleString("en-US")}</span>
                     </h4>
                     <h4>
                       Region: <span>{region}</span>

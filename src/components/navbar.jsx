@@ -1,54 +1,13 @@
+import { useContext } from "react";
+import ThemeContext from "../helpers/ThemeContext";
+
 const Navbar = () => {
-  const themeToggleFn = () => {
-    const themeToggleCheck = document.querySelector(".theme-toggle");
-    const nav = document.querySelector(".navbar-class");
-    const app = document.querySelector(".app");
-    const searchInput = document.querySelector(".search-input");
-    const filterButton = document.querySelector(".filter-button");
-    const hiddenFilterContainer = document.querySelector(
-      ".hidden-filter-container"
-    );
-    const logo = document.querySelector(".logo");
-    const signleCountryCards = document.querySelectorAll(
-      ".single-country-card"
-    );
-    const themeText = document.querySelector('.theme-text')
 
-    console.log("radi");
-
-    if (themeToggleCheck.checked) {
-      nav.classList.add("dark");
-      app.classList.add("dark");
-      searchInput.classList.add("dark");
-      filterButton.classList.add("dark");
-      hiddenFilterContainer.classList.add("dark");
-      logo.classList.add("dark");
-      themeText.classList.add('dark')
-      themeText.innerText = 'Dark Mode'
-
-      signleCountryCards.forEach((card) => {
-        card.classList.add("dark");
-      });
-    } else if (!themeToggleCheck.checked) {
-      nav.classList.remove("dark");
-      app.classList.remove("dark");
-      searchInput.classList.remove("dark");
-      filterButton.classList.remove("dark");
-      hiddenFilterContainer.classList.remove("dark");
-      logo.classList.remove("dark");
-      themeText.classList.remove('dark')
-      themeText.innerText = 'Light Mode'
-
-
-      signleCountryCards.forEach((card) => {
-        card.classList.remove("dark");
-      });
-    }
-  };
+  const {theme, toggleTheme} = useContext(ThemeContext);
 
   return (
-    <nav className="navbar-class">
-      <div className="navbar-container">
+    <nav className={`navbar-class ${theme}`}>
+      <div className={`navbar-container ${theme}`}>
         <a href="/">
           <h1 className="logo">Where in the world?</h1>
         </a>
@@ -58,7 +17,7 @@ const Navbar = () => {
             <input
               type="checkbox"
               className="theme-toggle"
-              onClick={themeToggleFn}
+              onClick={toggleTheme}
             />
             <span className="slider"></span>
           </label>

@@ -4,13 +4,8 @@ search component functionality
 
 filter functionality
 
-darken flags on darkmode
 
-filter by region click overlay
-
-
-sredi sve:  theme toggle components
-            fetch data
+sredi sve   fetch data
 
 
 
@@ -18,4 +13,12 @@ sredi sve:  theme toggle components
             https://codepen.io/jkantner/pen/rNKVMKd
 
 
-viewport height - navbar height
+sredi importe
+
+
+
+remember position on back?
+
+sredi errore
+
+very dark blue light mode text
