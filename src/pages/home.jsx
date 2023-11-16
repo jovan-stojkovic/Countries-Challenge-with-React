@@ -13,7 +13,7 @@ const Home = () => {
     axios
       .get(apiURL)
       .then((response) => {
-        setData(response.data);
+        setData(response.data.slice(0, 20));
       })
       .catch((error) => {
         console.error("Error:", error);

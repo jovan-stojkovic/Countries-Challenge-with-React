@@ -2,8 +2,6 @@ import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import "./style.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Search from "./components/search";
-import Filter from "./components/filter";
 import BackToTopButton from "./components/top";
 import Country from "./pages/country";
 

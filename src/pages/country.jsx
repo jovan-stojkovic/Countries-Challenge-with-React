@@ -19,8 +19,8 @@ const Country = () => {
 
   return (
     <>
-      <Link to="/">
-        <button>Back</button>
+      <Link to="/" className="link-text">
+        <button className="back-button">Back</button>
       </Link>
       <section className="country">
         {country.map((c) => {
@@ -112,8 +112,13 @@ const Country = () => {
                 <h5>
                   Border Countries:{" "}
                   <span className="single-country-span">
-                    {" "}
-                    {borders || "N/A"}
+                    {borders.map((border) => {
+                      return (
+                        <ul key={border}>
+                          <li>{border}</li>
+                        </ul>
+                      );
+                    })}
                   </span>
                 </h5>
               </div>
