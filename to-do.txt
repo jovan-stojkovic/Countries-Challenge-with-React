@@ -1,0 +1,21 @@
+sort countries map() by name
+
+search component functionality
+
+filter functionality
+
+darken flags on darkmode
+
+filter by region click overlay
+
+
+sredi sve:  theme toggle components
+            fetch data
+
+
+
+            compas loader 
+            https://codepen.io/jkantner/pen/rNKVMKd
+
+
+viewport height - navbar height

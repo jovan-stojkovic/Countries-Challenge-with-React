@@ -484,3 +484,26 @@ nav {
     }
   }
 }
+
+
+.border-container {
+  display: flex;
+  align-items: center;
+
+  h5 {
+    margin-right: 30px;
+  }
+
+  .border-ul {
+    list-style-type: none;
+
+    .border-li {
+      margin-right: 10px;
+      height: 30px;
+      width: 60px;
+      background-color: white;
+      text-align: center;
+    }
+  };
+}
+

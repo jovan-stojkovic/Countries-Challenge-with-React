@@ -109,18 +109,20 @@ const Country = () => {
                     </h5>
                   </div>
                 </div>
-                <h5>
-                  Border Countries:{" "}
-                  <span className="single-country-span">
+                <div className="border-container">
+              
+                  <h5>Border Countries:{" "}</h5>
+                
                     {borders.map((border) => {
                       return (
-                        <ul key={border}>
-                          <li>{border}</li>
+                        <ul className="border-ul" key={border}>
+                          <li className="border-li">{border}</li>
                         </ul>
                       );
                     })}
-                  </span>
-                </h5>
+                 
+                
+                </div>
               </div>
             </div>
           );

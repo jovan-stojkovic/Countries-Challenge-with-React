@@ -1,9 +1,0 @@
-sort countries map() by name
-
-search component functionality
-
-filter functionality
-
-darken flags on darkmode
-
-sort alphabeticly
