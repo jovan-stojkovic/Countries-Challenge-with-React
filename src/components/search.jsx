@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import ThemeContext from "../helpers/ThemeContext";
 
-const Search = () => {
+const Search = ({ setSearchWord }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -10,6 +10,7 @@ const Search = () => {
       className={`search-input ${theme}`}
       type="text"
       placeholder="Search for a country..."
+      onChange={(e) => setSearchWord(e.target.value)}
     />
   );
 };

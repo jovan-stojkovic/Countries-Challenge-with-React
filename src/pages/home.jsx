@@ -23,14 +23,30 @@ const Home = () => {
       });
   }, []);
 
+  const [visibleCards, setVisibleCards] = useState(16);
+  const [searchWord, setSearchWord] = useState("");
+
+  const handleShowMore = () => {
+    setVisibleCards((prevState) => prevState + 16);
+  };
+
   return (
     <>
       <div className="filter-components">
-        <Search />
+        <Search setSearchWord={setSearchWord} />
         <Filter />
       </div>
       <section className="grid">
-        {data.map((country) => {
+        {data && data
+          .filter(country => {
+            if (searchWord === '') {
+              return country
+            } else if (country.name.common.toLowerCase().includes(searchWord.toLowerCase())) {
+              return country;
+            }
+          })
+          .slice(0, visibleCards)
+          .map((country) => {
           const { name, population, region, capital, flags, cca2 } = country;
 
           return (
@@ -59,6 +75,14 @@ const Home = () => {
           );
         })}
       </section>
+
+      <div className="button-container">
+        {data && visibleCards <= data.length && (
+          <button className="show-more-button" onClick={handleShowMore}>
+            Show More
+          </button>
+        )}
+      </div>
     </>
   );
 };

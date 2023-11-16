@@ -34,3 +34,9 @@ logo nije na istom mestu na obe stranice
 
 
 responsive % % % % %
+
+
+search input reset on ESC
+
+
+show more button remove on search
