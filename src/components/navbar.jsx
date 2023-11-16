@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import ThemeContext from "../helpers/ThemeContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-
-  const {theme, toggleTheme} = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <nav className={`navbar-class ${theme}`}>
       <div className={`navbar-container ${theme}`}>
-        <a href="/">
+        <Link to="/">
           <h1 className="logo">Where in the world?</h1>
-        </a>
+        </Link>
 
         <div className="checkbox-wrapper-54">
           <label className="switch">

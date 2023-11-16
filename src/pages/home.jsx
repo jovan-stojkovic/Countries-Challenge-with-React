@@ -16,7 +16,7 @@ const Home = () => {
     axios
       .get(apiURL)
       .then((response) => {
-        setData(response.data.slice(0, 20));
+        setData(response.data);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -38,7 +38,7 @@ const Home = () => {
               <div className={`single-country-card ${theme}`}>
                 <Link to={`/countries/${name.common}`}>
                   <div className="img-container">
-                    <img src={flags.svg} alt={name} />
+                    <img src={flags.svg} alt={name} loading="lazy" />
                   </div>
                   <div className="info-country-card">
                     <h3>{name.common}</h3>

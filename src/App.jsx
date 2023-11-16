@@ -24,8 +24,8 @@ const App = () => {
   return (
     <Router>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <Navbar />
         <div className={`app ${theme}`}>
-          <Navbar />
           <BackToTopButton />
 
           <div className="app-content">

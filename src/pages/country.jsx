@@ -53,6 +53,7 @@ const Country = () => {
                 <h1>{name.common}</h1>
                 <div className="all-info">
                   <div className="info-single-country-left">
+
                     <h5>
                       Native Name:{" "}
                       <span className="single-country-span">
@@ -60,6 +61,7 @@ const Country = () => {
                         {nameGet[0][1].common || "N/A"}
                       </span>
                     </h5>
+
                     <h5>
                       Population:{" "}
                       <span className="single-country-span">
@@ -67,6 +69,7 @@ const Country = () => {
                         {population.toLocaleString("en-US") || "N/A"}
                       </span>
                     </h5>
+
                     <h5>
                       Region:{" "}
                       <span className="single-country-span">
@@ -74,6 +77,7 @@ const Country = () => {
                         {region || "N/A"}
                       </span>
                     </h5>
+
                     <h5>
                       Sub Region:{" "}
                       <span className="single-country-span">
@@ -81,6 +85,7 @@ const Country = () => {
                         {subregion || "N/A"}
                       </span>
                     </h5>
+
                     <h5>
                       Capital:{" "}
                       <span className="single-country-span">
@@ -88,9 +93,11 @@ const Country = () => {
                         {capital || "N/A"}
                       </span>
                     </h5>
+
                   </div>
                   <div className="info-single-country-right">
                     {" "}
+
                     <h5>
                       Top Level Domain:{" "}
                       <span className="single-country-span">
@@ -98,6 +105,7 @@ const Country = () => {
                         {tld[0] || "N/A"}
                       </span>
                     </h5>
+
                     <h5>
                       Currencies:{" "}
                       <span className="single-country-span">
@@ -105,6 +113,7 @@ const Country = () => {
                         {Object.values(currencies)[0].name || "N/A"}
                       </span>
                     </h5>
+
                     <h5>
                       Languages:{" "}
                       <span className="single-country-span">
@@ -112,19 +121,20 @@ const Country = () => {
                         {Object.values(languages) || "N/A"}
                       </span>
                     </h5>
+
                   </div>
                 </div>
                 <div className="border-container">
               
                   <h5>Border Countries:{" "}</h5>
                 
-                    {borders.map((border) => {
+                    {/* {borders.map((border) => {
                       return (
                         <ul className="border-ul" key={border}>
                           <li className="border-li">{border}</li>
                         </ul>
                       );
-                    })}
+                    }) || "N/A"} */}
                  
                 
                 </div>
