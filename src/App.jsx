@@ -22,21 +22,21 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <Navbar />
-        <div className={`app ${theme}`}>
-          <BackToTopButton />
+      <Router>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          <Navbar />
+          <div className={`app ${theme}`}>
+            <BackToTopButton />
 
-          <div className="app-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/countries/:name" element={<Country />} />
-            </Routes>
+            <div className="app-content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/countries/:name" element={<Country />} />
+              </Routes>
+            </div>
           </div>
-        </div>
-      </ThemeContext.Provider>
-    </Router>
+        </ThemeContext.Provider>
+      </Router>
   );
 };
 

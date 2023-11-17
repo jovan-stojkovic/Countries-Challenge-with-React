@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import ThemeContext from "../helpers/ThemeContext";
-
+import { useNavigate } from "react-router-dom";
 
 const Country = () => {
   const { theme } = useContext(ThemeContext);
-
+  const navigate = useNavigate();
   const [country, setCountry] = useState([]);
   const { name } = useParams();
 
@@ -24,9 +24,11 @@ const Country = () => {
 
   return (
     <>
-      <Link to="/" className={`link-text ${theme}`}>
-        <button className='back-button'>Back</button>
-      </Link>
+      <div className={`link-text ${theme}`}>
+        <button onClick={() => navigate(-1)} className="back-button">
+          Back
+        </button>
+      </div>
       <section className="country">
         {country.map((c) => {
           const {
@@ -53,7 +55,6 @@ const Country = () => {
                 <h1>{name.common}</h1>
                 <div className="all-info">
                   <div className="info-single-country-left">
-
                     <h5>
                       Native Name:{" "}
                       <span className="single-country-span">
@@ -85,11 +86,9 @@ const Country = () => {
                         {subregion || "N/A"}
                       </span>
                     </h5>
-
                   </div>
                   <div className="info-single-country-right">
                     {" "}
-
                     <h5>
                       Capital:{" "}
                       <span className="single-country-span">
@@ -97,7 +96,6 @@ const Country = () => {
                         {capital || "N/A"}
                       </span>
                     </h5>
-
                     <h5>
                       Top Level Domain:{" "}
                       <span className="single-country-span">
@@ -105,7 +103,6 @@ const Country = () => {
                         {tld[0] || "N/A"}
                       </span>
                     </h5>
-
                     <h5>
                       Currencies:{" "}
                       <span className="single-country-span">
@@ -113,7 +110,6 @@ const Country = () => {
                         {Object.values(currencies)[0].name || "N/A"}
                       </span>
                     </h5>
-
                     <h5>
                       Languages:{" "}
                       <span className="single-country-span">
@@ -121,22 +117,18 @@ const Country = () => {
                         {Object.values(languages) || "N/A"}
                       </span>
                     </h5>
-
                   </div>
                 </div>
                 <div className="border-container">
-              
-                  <h5>Border Countries:{" "}</h5>
-                
-                    {/* {borders.map((border) => {
+                  <h5>Border Countries: </h5>
+
+                  {/* {borders.map((border) => {
                       return (
                         <ul className="border-ul" key={border}>
                           <li className="border-li">{border}</li>
                         </ul>
                       );
                     }) || "N/A"} */}
-                 
-                
                 </div>
               </div>
             </div>
