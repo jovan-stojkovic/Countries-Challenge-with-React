@@ -1,23 +1,8 @@
 sort countries map() by name
 
-search component functionality
-
-filter functionality
-
-
 sort by
 
-sredi sve   fetch data
-
-
-
-            compas loader 
-            https://codepen.io/jkantner/pen/rNKVMKd
-
-
 sredi importe
-
-
 
 remember position on back?
 
@@ -25,24 +10,15 @@ sredi errore
 
 very dark blue light mode text
 
-
-
-
 razmak u languages
-
-sredi border u single country page
-
-logo nije na istom mestu na obe stranice
 
 
 responsive % % % % %
 
-
 search input reset on ESC
-
-
-show more button remove on search
 
 icons color change on theme change
 
 hide showmenu when user clicks anywhere
+
+scroll load more
