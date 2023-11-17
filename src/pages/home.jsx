@@ -78,7 +78,7 @@ const Home = () => {
 
       <div className="button-container">
         {data && visibleCards <= data.length && (
-          <button className="show-more-button" onClick={handleShowMore}>
+          <button className={`show-more-button ${theme}`} onClick={handleShowMore}>
             Show More
           </button>
         )}

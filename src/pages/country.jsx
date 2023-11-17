@@ -86,6 +86,10 @@ const Country = () => {
                       </span>
                     </h5>
 
+                  </div>
+                  <div className="info-single-country-right">
+                    {" "}
+
                     <h5>
                       Capital:{" "}
                       <span className="single-country-span">
@@ -93,10 +97,6 @@ const Country = () => {
                         {capital || "N/A"}
                       </span>
                     </h5>
-
-                  </div>
-                  <div className="info-single-country-right">
-                    {" "}
 
                     <h5>
                       Top Level Domain:{" "}

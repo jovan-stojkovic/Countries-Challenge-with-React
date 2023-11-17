@@ -5,6 +5,8 @@ search component functionality
 filter functionality
 
 
+sort by
+
 sredi sve   fetch data
 
 
@@ -40,3 +42,5 @@ search input reset on ESC
 
 
 show more button remove on search
+
+icons color change on theme change
