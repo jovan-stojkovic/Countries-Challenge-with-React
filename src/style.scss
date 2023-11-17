@@ -22,6 +22,11 @@ $White: hsl(0, 0%, 100%);
 // Box Shadow
 $box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
+$hue: 223;
+$bg: hsl(var(--hue), 90%, 25%);
+$fg: hsl(var(--hue), 10%, 90%);
+$trans-dur: 0.3s;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -167,8 +172,32 @@ $box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   background-color: rgba(255, 255, 255, 0.687);
   z-index: 5;
 
+  .to-the-top-popup {
+    width: 100px;
+    height: 40px;
+    position: fixed;
+    background-color: $White;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+    bottom: 80px;
+    right: 25px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
   &:hover {
     cursor: pointer;
+  }
+
+  &:hover .to-the-top-popup {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
   }
 
   img {
@@ -416,8 +445,7 @@ $box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
-    box-shadow: $box-shadow;
-      
+      box-shadow: $box-shadow;
     }
   }
 
@@ -518,6 +546,8 @@ $box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   }
 }
 
+///////////////////////////////////SHOW MORE STYLING///////////////////////////////////
+
 .button-container {
   display: flex;
 
@@ -542,7 +572,7 @@ $box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       transition: 0.2s;
     }
-    
+
     &:active {
       box-shadow: 0 5px #1b1b1b63;
       transform: translateY(2px);

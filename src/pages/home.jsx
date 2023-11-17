@@ -6,9 +6,12 @@ import Filter from "../components/filter";
 import { useContext } from "react";
 import ThemeContext from "../helpers/ThemeContext";
 
+
 const Home = () => {
+
   const { theme } = useContext(ThemeContext);
   const [data, setData] = useState([]);
+  const [selectRegion, setSelectRegion] = useState('')
 
   useEffect(() => {
     const apiURL = "https://restcountries.com/v3.1/all";
@@ -25,16 +28,36 @@ const Home = () => {
 
   const [visibleCards, setVisibleCards] = useState(16);
   const [searchWord, setSearchWord] = useState("");
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleShowMore = () => {
-    setVisibleCards((prevState) => prevState + 16);
+  const handleLoadMore = () => {
+    setVisibleCards((prevState) => prevState + 8);
   };
+
+  const handleScroll = () => {
+    const max =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const position = window.scrollY;
+    setScrollPosition(position);
+
+    max === position ? handleLoadMore() : null;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
       <div className="filter-components">
         <Search setSearchWord={setSearchWord} />
-        <Filter />
+        <Filter setSelectRegion={setSelectRegion}/>
       </div>
       <section className="grid">
         {data && data
@@ -42,6 +65,12 @@ const Home = () => {
             if (searchWord === '') {
               return country
             } else if (country.name.common.toLowerCase().includes(searchWord.toLowerCase())) {
+              return country;
+            }
+          }).filter(country => {
+            if(selectRegion === "") {
+              return country;
+            } else if (country.region.toLowerCase().includes(selectRegion.toLowerCase())) {
               return country;
             }
           })
@@ -75,14 +104,6 @@ const Home = () => {
           );
         })}
       </section>
-
-      <div className="button-container">
-        {data && visibleCards <= data.length && (
-          <button className={`show-more-button ${theme}`} onClick={handleShowMore}>
-            Show More
-          </button>
-        )}
-      </div>
     </>
   );
 };

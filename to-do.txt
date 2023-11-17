@@ -44,3 +44,5 @@ search input reset on ESC
 show more button remove on search
 
 icons color change on theme change
+
+hide showmenu when user clicks anywhere

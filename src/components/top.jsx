@@ -22,8 +22,10 @@ const BackToTopButton = () => {
 
   return (
     <>
+    
       {backToTopButton && (
         <button onClick={scrollUp} className="to-the-top-button">
+          <div className="to-the-top-popup">To the top!</div>
           <img
             src="https://www.iconbolt.com/iconsets/heroicons-outline/arrow-up-circle.svg"
             alt=""

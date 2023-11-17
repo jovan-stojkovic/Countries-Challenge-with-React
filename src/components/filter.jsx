@@ -4,14 +4,15 @@ import ThemeContext from "../helpers/ThemeContext";
 
 useState;
 
-const Filter = () => {
+const Filter = ({ setSelectRegion }) => {
   const { theme } = useContext(ThemeContext);
   const [hidden, setHidden] = useState("hidden");
 
   const showHidden = () => {
-    console.log("radi");
     setHidden(hidden === "hidden" ? "show" : "hidden");
   };
+
+  const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
 
   return (
     <>
@@ -23,11 +24,16 @@ const Filter = () => {
         Filter by Region
         <div className={`hidden-filter-container ${theme} ${hidden}`}>
           <ul>
-            <li>Africa</li>
-            <li>America</li>
-            <li>Asia</li>
-            <li>Europe</li>
-            <li>Oceania</li>
+            {regions.map((region, index) => (
+              <li
+                key={index}
+                onClick={() => {
+                  setSelectRegion(region);
+                }}
+              >
+                {region}
+              </li>
+            ))}
           </ul>
         </div>
       </button>
