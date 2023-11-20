@@ -114,7 +114,7 @@ const Country = () => {
                       Languages:{" "}
                       <span className="single-country-span">
                         {" "}
-                        {Object.values(languages) || "N/A"}
+                        {Object.values(languages).join(', ') || "N/A"}
                       </span>
                     </h5>
                   </div>

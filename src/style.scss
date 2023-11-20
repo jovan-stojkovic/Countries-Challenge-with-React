@@ -39,7 +39,7 @@ $trans-dur: 0.3s;
 
 .navbar-class {
   background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(7px);
   box-shadow: $box-shadow;
   position: fixed;
   top: 0;
@@ -144,7 +144,7 @@ $trans-dur: 0.3s;
 
   &.dark {
     background-color: rgb(43, 57, 69, 0.7);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(7px);
 
     .logo {
       color: white;
@@ -388,6 +388,11 @@ $trans-dur: 0.3s;
     img {
       filter: brightness(90%);
     }
+
+    &:active {
+      box-shadow: 0 5px #00000063;
+      transform: translateY(4px);
+    }
   }
 
   a {
@@ -403,7 +408,7 @@ $trans-dur: 0.3s;
   }
 
   &:active {
-    box-shadow: 0 5px #1b1b1b63;
+    box-shadow: 0 5px #87878763;
     transform: translateY(4px);
   }
 

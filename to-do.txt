@@ -10,7 +10,6 @@ sredi errore
 
 very dark blue light mode text
 
-razmak u languages
 
 
 responsive % % % % %
@@ -22,3 +21,5 @@ icons color change on theme change
 hide showmenu when user clicks anywhere
 
 scroll load more
+
+antartica error
