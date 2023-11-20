@@ -45,7 +45,6 @@ const Country = () => {
             cca2,
           } = c;
           const nameGet = Object.entries(name.nativeName);
-          console.log(typeof nameGet);
           return (
             <div key={cca2} className={`country-page-container ${theme}`}>
               <div className="flag">
@@ -114,21 +113,24 @@ const Country = () => {
                       Languages:{" "}
                       <span className="single-country-span">
                         {" "}
-                        {Object.values(languages).join(', ') || "N/A"}
+                        {Object.values(languages).join(", ") || "N/A"}
                       </span>
                     </h5>
                   </div>
                 </div>
                 <div className="border-container">
                   <h5>Border Countries: </h5>
-
-                  {/* {borders.map((border) => {
-                      return (
-                        <ul className="border-ul" key={border}>
-                          <li className="border-li">{border}</li>
-                        </ul>
-                      );
-                    }) || "N/A"} */}
+                  {borders && borders.length > 0 ? (
+                    <ul className="border-ul">
+                      {borders.map((border) => (
+                        <li className={`border-li ${theme}`} key={border}>
+                          {border}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    "N/A"
+                  )}
                 </div>
               </div>
             </div>
